@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe Beautify</title>
+    <link rel="stylesheet" href="./css/layui.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./layui.js"></script>
+    <script type="text/javascript" src="./js/function.js"></script>
+</head>
+<script>
+    function getSetting(res) {
+        var file = res.language.file;
+        document.write("<script type='text/javascript' src='../config/language/" + file + "?cb=getLanguage'></script");
+    }
+
+    function getLanguage(res) {
+        $(".ab-nav-home").html("<i></i>" + res.content.nav.home);
+        $(".ab-nav-store").html("<i></i>" + res.content.nav.store);
+        $(".ab-nav-diy").html("<i></i>" + res.content.nav.diy);
+        $(".ab-nav-plugin").html("<i></i>" + res.content.nav.plugin);
+        $(".ab-nav-setting").html("<i></i>" + res.content.nav.setting);
+        $(".ab-nav-about").html("<i></i>" + res.content.nav.about);
+
+    }
+</script>
+
+<body>
+    <div class="ab-win">
+        <div class="ab-win-side">
+            <div class="ab-side-top">
+                <img src="image/logo.jpg">
+            </div>
+            <div class="ab-side-bottom">
+                <div class="ab-side-nav">
+                    <ul>
+                        <li class="ab-nav-home" data-checked="true"></li>
+                        <li class="ab-nav-store" data-checked="false"></li>
+                        <li class="ab-nav-diy" data-checked="false"></li>
+                        <li class="ab-nav-plugin" data-checked="false"></li>
+                        <li class="ab-nav-setting" data-checked="false"></li>
+                        <li class="ab-nav-about" data-checked="false"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../config/setting/config.json?cb=getSetting"></script>
+
+
+</html>

@@ -11,22 +11,6 @@
     <script type="text/javascript" src="./layui.js"></script>
     <script type="text/javascript" src="./js/function.js"></script>
 </head>
-<script>
-    function getSetting(res) {
-        var file = res.language.file;
-        document.write("<script type='text/javascript' src='../config/language/" + file + "?cb=getLanguage'></script");
-    }
-
-    function getLanguage(res) {
-        $(".ab-nav-home").html("<i></i>" + res.content.nav.home);
-        $(".ab-nav-store").html("<i></i>" + res.content.nav.store);
-        $(".ab-nav-diy").html("<i></i>" + res.content.nav.diy);
-        $(".ab-nav-plugin").html("<i></i>" + res.content.nav.plugin);
-        $(".ab-nav-setting").html("<i></i>" + res.content.nav.setting);
-        $(".ab-nav-about").html("<i></i>" + res.content.nav.about);
-
-    }
-</script>
 
 <body>
     <div class="ab-win">
@@ -37,12 +21,12 @@
             <div class="ab-side-bottom">
                 <div class="ab-side-nav">
                     <ul>
-                        <li class="ab-nav-home" data-checked="true"></li>
-                        <li class="ab-nav-store" data-checked="false"></li>
-                        <li class="ab-nav-diy" data-checked="false"></li>
-                        <li class="ab-nav-plugin" data-checked="false"></li>
-                        <li class="ab-nav-setting" data-checked="false"></li>
-                        <li class="ab-nav-about" data-checked="false"></li>
+                        <li class="ab-nav-home" data-checked="true" data-index="1"></li>
+                        <li class="ab-nav-store" data-checked="false" data-index="2"></li>
+                        <li class="ab-nav-diy" data-checked="false" data-index="3"></li>
+                        <li class="ab-nav-plugin" data-checked="false" data-index="4"></li>
+                        <li class="ab-nav-setting" data-checked="false" data-index="5"></li>
+                        <li class="ab-nav-about" data-checked="false" data-index="6"></li>
                     </ul>
                 </div>
             </div>
